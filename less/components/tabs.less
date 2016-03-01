@@ -1,0 +1,131 @@
+/**
+ * Missing Bootstrap 2 tab styling.
+ * @see http://stackoverflow.com/questions/18432577/stacked-tabs-in-bootstrap-3
+ * @see http://bootply.com/74926
+ */
+.tabbable {
+  margin-bottom: 20px;
+}
+.tabs-below, .tabs-left, .tabs-right {
+  > .nav-tabs {
+    border-bottom: 0;
+  }
+}
+.tab-pane > .panel-heading {
+  display: none;
+}
+.tab-content > .active {
+  display: block;
+}
+
+// Checkbox cell fix.
+th.checkbox,
+td.checkbox,
+th.radio,
+td.radio {
+  display: table-cell;
+}
+
+// Views UI fixes.
+.views-display-settings {
+  .label {
+    font-size: 100%;
+    color:#666666;
+  }
+  .footer {
+    padding:0;
+    margin:4px 0 0 0;
+  }
+}
+
+// Radio and checkbox in table fixes
+table {
+  .radio input[type="radio"],
+  .checkbox input[type="checkbox"] {
+    max-width: inherit;
+  }
+}
+
+// Exposed filters
+.form-horizontal .form-group label {
+  position: relative;
+  min-height: 1px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 7px;
+  text-align: right;
+}
+
+.nav-tabs{
+  > li{
+    border-bottom: 2px solid transparent;
+    &.active{
+      border-bottom: 2px solid @tabs-active-border-color;
+    }
+  }
+}
+
+.list-inline{
+  margin-left: 0
+}
+
+
+// tabs
+
+// Below.
+.tabs-below {
+  > .nav-tabs {
+    > li {
+      margin-top: -1px;
+      margin-bottom: 0;
+      > a {
+        &:hover,
+        &:focus {
+          border-bottom-color: transparent;
+        }
+      }
+    }
+    > .active {
+      > a,
+      > a:hover,
+      > a:focus {
+        border-bottom-color: @tabs-active-border-color;
+      }
+    }
+  }
+}
+
+// Left and right tabs.
+.tabs-left,
+.tabs-right {
+  > .nav-tabs {
+    width: 220px;
+    > li {
+      float: none;
+      &:focus {
+        outline: 0;
+      }
+      > a {
+        margin-right: 0;
+        margin-bottom: 3px;
+        &:focus {
+          outline: 0;
+        }
+      }
+    }
+  }
+  > .tab-content {
+    overflow: hidden;
+    padding: 10px 15px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    border: 1px solid #ddd;
+  }
+}
+
+// Left tabs.
+.tabs-left {
+  > .nav-tabs {
+    float: left;
+    margin-right: -1px;
+  }
+}

@@ -1,0 +1,99 @@
+@import "../_variables.less";
+@import "../material/_colors.less";
+body.toolbar.toolbar{
+  padding-top: 0!important;
+
+  .toolbar-menu{
+    ul{
+      padding: 0;
+      margin-bottom: 0;
+      border-bottom: 1px solid rgba(0,0,0,.2);
+    }
+    li{
+      list-style: none;
+    }
+    a{
+      display: block;
+      padding: 7px 10px;
+      &:hover{
+        text-decoration: none;
+        background: rgba(0,0,0,.2);
+      }
+    }
+
+
+    .caret{
+      border: 0;
+      float: right;
+      height: auto;
+      width: auto;
+      &:before{
+        speak: none;
+        display: inline-block;
+        font: normal normal normal 24px/1 'Material-Design-Icons';
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transform: translate(0, 0);
+        content: "\e8af";
+      }
+    }
+
+    .toggle{
+      margin-top: 10px;
+      // background: rgba(0, 0, 0, 0.1);
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown-menu{
+      position: static;
+      width: 100%;
+      background-color: transparent;
+      box-shadow: none;
+      border: 0;
+      float: none;
+      > li{
+        .caret{
+          display: none;
+        }
+        > a{
+        color: @sidenav-color!important;
+        background-color: transparent;
+        }
+      }
+    }
+
+    .menu > .expanded > .open + .dropdown-menu{
+      display: block;
+    }
+
+  }
+    .toolbar-drawer{
+      // clearfix
+      &.collapsed{
+        height: 0;
+        overflow: hidden;
+      }
+      .toolbar-shortcuts{
+        &:before,
+        &:after {
+          content: " ";
+          display: table;
+        }
+        &:after {
+          clear: both;
+        }
+      }
+      // end of clearfix
+      // background: rgba(0, 0, 0, 0.1);
+    }
+}
+div#toolbar div.toolbar-shortcuts ul.menu li a.active:hover,
+div#toolbar div.toolbar-shortcuts ul.menu li a.active{
+  background-color: transparent!important;
+}
+
+div#toolbar a#edit-shortcuts{
+  color: @sidenav-color!important;
+}

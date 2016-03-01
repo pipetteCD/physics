@@ -1,0 +1,145 @@
+// General styles for all menus
+.sidenav {
+	background: @sidenav-bg;
+	color: @sidenav-color;
+	position: fixed;
+  left: -260px;
+	width: 260px;
+	height: 100%;
+	top: 0;
+	z-index: 1000;
+	a{
+		color: @sidenav-color;
+	}
+	.navbar-nav ul li{
+		display: block;
+		border-left: 2px solid @brand-primary;
+		a{
+			padding-left: 18px;
+		}
+		&:hover{
+			border-left: 2px solid white;
+			background-color: #c80023;
+		}
+	}
+}
+
+
+
+// styles and overrides for the mobile push menu
+.sidenav-left {
+	left: -260px;
+	overflow: hidden;
+}
+
+/* Push classes applied to the body */
+.sidenav-push {
+	overflow-x: hidden;
+	position: relative;
+	left: 0;
+}
+
+.hide-overflow{
+	overflow-x: hidden; // to override for mobile
+	#content-wrapper:before{
+		z-index: 2;
+		opacity: .85;
+	}
+}
+
+.sidenav-push-toright{
+	#content-wrapper:before{
+		-webkit-transition: z-index .05s linear;
+		-o-transition: z-index .05s linear;
+		transition: z-index .05s linear;
+	}
+}
+
+#content-wrapper {
+	position: relative;
+	&:before{
+		content: "";
+		width: 100%;
+		height: 100%;
+		display: block;
+		position: absolute;
+		top: 0;
+		background-color: black;
+		z-index: -1;
+		opacity: 0;
+		-webkit-transition: opacity .15s linear;
+        -o-transition: opacity .15s linear;
+    	transition: opacity .15s linear;
+	}
+
+	> .container,
+	> .footer{
+		left: 0;
+		position: relative;
+		-webkit-transition: left 0.3s ease;
+		-moz-transition: left 0.3s ease;
+		transition: left 0.3s ease;
+	}
+}
+
+
+
+// animations
+.sidenav,
+.sidenav-push {
+	-webkit-transition: left 0.3s ease;
+	-moz-transition: left 0.3s ease;
+	transition: left 0.3s ease;
+
+}
+
+.sidenav-left.sidenav-open {
+	left: 0px;
+}
+
+.sidenav-push-toright #toolbar{
+	left: -0!important;
+}
+
+
+
+#sidenav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 120vh;
+  background-color: rgba(0,0,0,.5);
+  z-index: 997;
+
+  will-change: opacity;
+}
+
+// .sidenav-push-toright .sidenav-overlay{
+// 		z-index: 60;
+// 		opacity: .8;
+// }
+.sidenav-toggle{
+	border:0;
+	background-color: transparent;
+	margin: 6px 0;
+	i{
+		font-size: 38px;
+	}
+}
+
+.sidenav-overlay{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	display: none;
+	top: 0;
+	background-color: black;
+	z-index: 60;
+	opacity: 0;
+	will-change: opacity;
+	-webkit-transition: opacity .15s linear;
+	-o-transition: opacity .15s linear;
+	transition: opacity .15s linear;
+}

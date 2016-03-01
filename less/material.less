@@ -1,0 +1,158 @@
+@import "_variables.less";
+@import "material/_colors.less";
+@import "material/_mixins.less";
+@import "material/_icons-material-design.less";
+
+body {
+  background-color: @body-bg;
+  &.inverse {
+    background: #333333;
+    &, .form-control {
+      color: @darkbg-text;
+    }
+    .modal,
+    .panel-default,
+    .card {
+      &,
+      .form-control {
+        background-color: initial;
+        color: initial;
+      }
+    }
+
+  }
+}
+
+
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
+  font-family: "RobotoDraft", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+
+h5, h6{
+  font-weight: 400;
+}
+
+a, a:hover, a:focus {
+  color: @primary;
+}
+
+// Well and Jumbotrons
+@import "material/_welljumbo.less";
+
+// Buttons
+@import "material/_buttons.less";
+
+// Checkboxes
+@import "material/_checkboxes.less";
+
+// Toggle buttons
+@import "material/_togglebutton.less";
+
+// Radios
+@import "material/_radios.less";
+
+// Text inputs
+@import "material/_inputs.less";
+
+legend {
+  border-bottom: 0;
+}
+
+// Lists
+@import "material/_lists.less";
+
+// Navbar
+@import "material/_navbar.less";
+
+.dropdown-menu {
+  border: 0;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  .divider {
+    background-color: rgba(229, 229, 229, 0.12);
+  }
+  li {
+    overflow: hidden;
+    position: relative;
+    a:hover {
+      background-color: transparent;
+      color: @primary;
+    }
+  }
+  .variations(~" li a:hover", color, @primary);
+}
+
+// Alerts
+@import "material/_alerts.less";
+
+// Progress bar
+@import "material/_progress.less";
+
+// Typography
+.text-warning {
+  color: @btn-warning;
+}
+.text-primary {
+  color: @btn-primary;
+}
+.text-danger {
+  color: @btn-danger;
+}
+.text-success {
+  color: @btn-success;
+}
+.text-info {
+  color: @btn-info;
+}
+
+@import "material/_tabs.less";
+
+@import "material/_popups.less";
+
+@import "material/_icons.less";
+
+@import "material/_cards.less";
+
+@import "material/_dialogs.less";
+
+@import "material/_labels.less";
+
+@import "material/_panels.less";
+
+@import "material/_dividers.less";
+
+@import "material/pagination.less";
+
+// Custom material design
+
+@import "material/fixed-action-button.less";
+
+// Prevent highlight on mobile
+* {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+  &:focus {
+    outline: 0;
+  }
+}
+
+
+// External plugins
+// @import "material/_plugin-snackbarjs.less";
+// @import "material/_plugin-nouislider.less";
+// @import "material/_plugin-selectize.less";
+// @import "material/_plugin-dropdownjs.less";
+
+// Material shadows
+// Place them on bottom of stylesheet to increase the importance of it and override other same-specificity selectors
+@import "material/_shadows.less";
+
+// Primary tabs
+@import "components/tabs.less";
+
+// Side nav
+@import "components/sidenav.less";
+
+// Overrides
+// Drupal bootstrap overrides
+@import "overrides.less";

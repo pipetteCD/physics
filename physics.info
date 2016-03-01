@@ -1,0 +1,51 @@
+name = Physics
+description = A Material Design based sub theme for Bootstrap.
+core = 7.x
+base theme = bootstrap
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Regions
+;;;;;;;;;;;;;;;;;;;;;
+
+regions[navigation]     = 'Navigation'
+regions[header]         = 'Top Bar'
+regions[highlighted]    = 'Highlighted'
+regions[help]           = 'Help'
+regions[content]        = 'Content'
+regions[sidebar_first]  = 'Primary'
+regions[sidebar_second] = 'Secondary'
+regions[footer]         = 'Footer'
+regions[page_top]       = 'Page top'
+regions[page_bottom]    = 'Page bottom'
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = css/bootstrap.min.css
+stylesheets[all][] = css/material.css
+
+; stylesheets[all][] = css/material-fullpalette.css
+; This will load all colors
+
+stylesheets[all][] = css/roboto.css
+stylesheets[all][] = css/ripples.css
+
+
+; ;;;;;;;;;;;;;;;;;;;;;
+; ;; Scripts
+; ;;;;;;;;;;;;;;;;;;;;;
+
+ scripts[] = 'js/bootstrap.min.js'
+ scripts[] = 'js/velocity.min.js'
+ scripts[] = 'js/ripples.min.js'
+ scripts[] = 'js/material.min.js'
+ scripts[] = 'js/plugins/classie.js'
+ scripts[] = 'js/plugins/fab.js'
+ scripts[] = 'js/custom.js'
+
+; Disable BootstrapCDN if using Bootstrap source files in your sub-theme.
+
+settings[bootstrap_cdn] = ''
