@@ -15,19 +15,19 @@ module.exports = function (grunt) {
   // Define the configuration for all the tasks
   grunt.initConfig({
 
-      // Watches files for changes and runs tasks based on the changed files
-      watch: {
-        styles: {
-          files: ['less/{,*/}*.less'],
-          tasks: ['less'],
-          options: {
-            spawn: false
-          }
-        },
-        icons: {
-          files: ['./images/glyphs/*.svg'],
-          tasks: ['font']
+    // Watches files for changes and runs tasks based on the changed files
+    watch: {
+      styles: {
+        files: ['less/{,*/}*.less'],
+        tasks: ['less'],
+        options: {
+          spawn: false
         }
+      },
+      icons: {
+        files: ['./images/glyphs/*.svg'],
+        tasks: ['font']
+      }
     },
 
     // compile LESS files into style.css
@@ -60,12 +60,10 @@ module.exports = function (grunt) {
     },
 
 
-
-
     //Add vendor prefixed styles
     postcss: {
       options: {
-          processors: [
+        processors: [
           require('autoprefixer-core')({browsers: ['last 5 version', 'ie 8', 'ie 9']})
         ]
       },
@@ -75,9 +73,19 @@ module.exports = function (grunt) {
           src: './css/style.css'
         }]
       }
+    },
+
+    cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: 'css',
+          src: ['*.css', '!*.min.css'],
+          dest: 'css',
+          ext: '.min.css'
+        }]
+      }
     }
-
-
   });
 
   grunt.registerTask('start', [
@@ -95,6 +103,5 @@ module.exports = function (grunt) {
   grunt.registerTask('default', [
     'build'
   ]);
-
 
 };

@@ -25,13 +25,13 @@ regions[page_bottom]    = 'Page bottom'
 ;;;;;;;;;;;;;;;;;;;;;
 
 stylesheets[all][] = css/bootstrap.min.css
-stylesheets[all][] = css/material.css
+stylesheets[all][] = css/material.min.css
 
-; stylesheets[all][] = css/material-fullpalette.css
 ; This will load all colors
+; stylesheets[all][] = css/material-fullpalette.min.css
 
-stylesheets[all][] = css/roboto.css
-stylesheets[all][] = css/ripples.css
+stylesheets[all][] = css/roboto.min.css
+stylesheets[all][] = css/ripples.min.css
 
 
 ; ;;;;;;;;;;;;;;;;;;;;;

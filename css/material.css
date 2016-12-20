@@ -7856,6 +7856,13 @@ fieldset .panel-heading a.panel-title:hover {
 .form-actions {
   clear: both;
 }
+.checkbox input[type=checkbox] {
+  opacity: 1;
+  position: inherit;
+  margin: 0;
+  width: 20px;
+  height: 16px;
+}
 .radio:first-child,
 .checkbox:first-child {
   margin-top: 0;
