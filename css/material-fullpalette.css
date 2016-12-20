@@ -64403,6 +64403,7 @@ fieldset .panel-heading a.panel-title:hover {
 .form-actions {
   clear: both;
 }
+.radio input[type=radio],
 .checkbox input[type=checkbox] {
   opacity: 1;
   position: inherit;
